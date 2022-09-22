@@ -27,14 +27,6 @@ const List = ():JSX.Element => {
     {
       title: 'Username',
       object: 'username'
-    },
-    {
-      title: 'Username',
-      object: 'username'
-    },
-    {
-      title: 'Username',
-      object: 'username'
     }
   ]
 
@@ -76,17 +68,23 @@ const List = ():JSX.Element => {
           </div>
         ))}
       </div>
-      {/* <div className='body'>
+      <div className='body'>
         {content.map((th:any) => (
           <div key={th.id} className="custom-tr">
             {header.map((td:any) => (
-              <div  key={td.object} className='custom-td'>
+              <div 
+                key={td.object} 
+                className='custom-td'
+                style={{
+                  width: `${100/8}%`
+                }}
+              >
                 <p key={td.object}>{th[td.object]}</p>
               </div>
             ))}
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   )
 }

@@ -1,34 +1,67 @@
 @import '../../styles/variables.scss';
 
 .list-component {
-  border-radius: 15px;
   overflow: hidden;
   background-color: #FFF;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 16px 0px;
 
   .header {
     display: flex;
     background-color: $color-primary;
-    padding: 0 20px;
+    padding: 10px;
+    min-height: 60px;
+    justify-content: space-between;
+
+    .custom-th {
+      color: $color-white;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      word-break: break-word;
+    }
+  }
+
+  .body {
+    padding: 0 10px;
+
+    .custom-tr {
+      background: $color-white;
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0px;
+      padding: 12px 0px;
+      min-height: 60px;
+      overflow: hidden;
+      box-shadow: rgb(0 0 0 / 15%) 0px 2px 16px 0px;
+
+      .custom-td {
+        color: $color-black;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        word-break: break-word;
+      }
+    }
   }
 
   
-  border-collapse: collapse;
-  width: 100%;
+  // border-collapse: collapse;
+  // width: 100%;
 
-  tr {
-    border: 1px solid #ddd;
-    &:nth-child(even){background-color: $color-background;}
-  }
+  // tr {
+  //   border: 1px solid #ddd;
+  //   &:nth-child(even){background-color: $color-background;}
+  // }
 
-  th, td {
-    padding: 8px;
-  }
+  // th, td {
+  //   padding: 8px;
+  // }
 
-  th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: $color-primary;
-    color: white;
-  }
+  // th {
+  //   padding-top: 12px;
+  //   padding-bottom: 12px;
+  //   text-align: left;
+  //   background-color: $color-primary;
+  //   color: white;
+  // }
 }
