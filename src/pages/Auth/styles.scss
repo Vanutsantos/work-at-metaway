@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+
+.auth {
+  background: $color-background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+  .form-container {
+    background: $color-white;
+    width: 300px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+    border-radius: 5px;
+
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+      color: $color-primary;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+        span {
+          margin-bottom: 5px;
+        }
+        
+        input {
+          outline: none;
+          height: 40px;
+          border-radius: 5px;
+          border: 1px solid $color-black;
+          padding: 0 10px;
+        }
+
+        button {
+          background: $color-primary;
+          height: 40px;
+          color: $color-white;
+          border: none;
+          border-radius: 5px;
+          margin: 10px 0 -10px;
+        }
+      }
+    }
+  }
+}

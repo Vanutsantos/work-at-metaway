@@ -1,0 +1,8 @@
+.layout-wrapper {
+  display: flex;
+
+  .layout-content {
+    padding: 20px;
+    width: calc(100% - 200px);
+  }
+}

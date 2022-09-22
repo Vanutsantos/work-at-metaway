@@ -1,0 +1,124 @@
+@import '../../styles/variables.scss';
+
+.sidebar {
+  background: $color-primary;
+  height: 100vh;
+  width: 230px;
+  padding: 20px 5px;
+  transition: ease all 300ms;
+
+  &.close {
+    width: 58px;
+
+    li svg {
+      margin-right: 0;
+    }
+  }
+
+  .menu-handler {
+    background: none;
+    border: none;
+    font-size: 30px;
+    margin: 0 0 10px 10px;
+    color: $color-white;
+    cursor: pointer;
+    outline: none;
+  }
+
+  >a {
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 25px 20px;
+    display: flex;
+  } 
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+
+      a {
+        color: $color-white;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-weight: bold;
+        width: 100%;
+        font-size: 14px;
+        transition: ease all 300ms;
+
+        svg {
+          fill: $color-white;
+          margin-right: 10px;
+          font-size: 18px;
+        }
+      }
+
+      &:hover,
+      &.active {
+        a {
+          background: $color-white;
+          color: $color-primary;
+
+          svg {
+            fill: $color-primary
+          }
+        }
+      }
+
+      &.close {
+        a {
+          font-size: 0;
+        }
+      }
+    }
+  }
+  // box-shadow: 0 0 3px $color-black;
+
+  // .sidebar-wrapper {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+
+  //   >a {
+  //     color: $color-primary;
+  //     text-decoration: none;
+  //     text-transform: uppercase;
+  //     font-size: 28px;
+  //     font-weight: bold;
+  //   } 
+
+  //   ul {
+  //     list-style: none;
+  //     display: flex;
+  //     align-items: center;
+
+  //     li {
+  //       margin: 0 5px;
+
+  //       a {
+  //         color: $color-black;
+  //         display: flex;
+  //         padding: 25px 10px;
+  //         text-decoration: none;
+  //         font-weight: bold;
+
+  //         &:hover,
+  //         &.active {
+  //           background: $color-primary;
+  //           color: $color-white;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}

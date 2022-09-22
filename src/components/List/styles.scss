@@ -1,0 +1,34 @@
+@import '../../styles/variables.scss';
+
+.list-component {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #FFF;
+
+  .header {
+    display: flex;
+    background-color: $color-primary;
+    padding: 0 20px;
+  }
+
+  
+  border-collapse: collapse;
+  width: 100%;
+
+  tr {
+    border: 1px solid #ddd;
+    &:nth-child(even){background-color: $color-background;}
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $color-primary;
+    color: white;
+  }
+}
