@@ -70,7 +70,7 @@ const Profile = () => {
 
   return(
     <div className="container">
-      <h1>Perfil</h1>
+      <h1>Meu cadastro</h1>
 
       {data && 
         <div className="profile-wrapper">
