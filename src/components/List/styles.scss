@@ -23,6 +23,9 @@
 
   .body {
     padding: 0 10px;
+    max-height: 64vh;
+    overflow-y: scroll;
+    margin-top: -20px;
 
     .custom-tr {
       background: $color-white;

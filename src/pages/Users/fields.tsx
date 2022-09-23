@@ -1,4 +1,4 @@
-export const header = [
+export const header = (handleModal:any) => ([
   {
     title: 'Nome',
     object: 'nome'
@@ -22,5 +22,14 @@ export const header = [
   {
     title: 'Username',
     object: 'username'
+  },
+  {
+    title: '',
+    object: '',
+    actions: (value:any) => (
+      <button className="action-button" onClick={() => {
+        handleModal(value)
+      }}>Visualizar</button>
+    ),
   }
-]
+])

@@ -23,6 +23,7 @@ const Auth = ():JSX.Element => {
       if(data?.accessToken){
         CookieHelper.add(settings.TOKEN, data.accessToken)
         setUser(data)
+        alert('Acesso autorizado!')
         navigate("/");
       }
     } catch (error) {

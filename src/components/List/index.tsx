@@ -8,15 +8,12 @@ interface ListProps  {
 }
 
 const List = ({ header, content }:ListProps):JSX.Element => {
-
-  console.log(content)
-
   const makeContent = (value:any):any => {
     switch (value) {
       case true:
-        return 'Verdadeiro'
+        return 'Sim'
       case false:
-        return 'Falso'
+        return 'Não'
       default:
         return value ? value : '-'
     }
@@ -48,7 +45,13 @@ const List = ({ header, content }:ListProps):JSX.Element => {
                   width: `${100/Number(header.length)}%`
                 }}
               >
-                <p key={td.object}>{makeContent(th[td.object])}</p>
+                <p key={td.object}>
+                  {
+                    td.actions 
+                      ? td.actions(th)
+                      : makeContent(th[td.object])
+                  }
+                </p>
               </div>
             ))}
           </div>

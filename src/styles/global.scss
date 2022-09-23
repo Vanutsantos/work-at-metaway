@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 * {
   padding: 0;
   margin: 0;
@@ -37,5 +39,20 @@ body {
   //     max-width: 1320px;
   //   }
   }
+
+  button {
+    cursor: pointer;
+
+    &.action-button {
+      background: $color-primary;
+      border: none;
+      color: $color-white;
+      padding: 5px 10px;
+      margin: 0 3px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
 }
+  
 

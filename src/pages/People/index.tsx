@@ -1,12 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import List from '../../components/List';
+import PeopleModal from '../../components/PeopleModal';
 import Search from '../../components/Search';
 import { loadPeople } from '../../services/People';
 import { header } from './fields';
+import './styles.scss'
 
 const People = () => {
   const [people, setPeople] = useState<any>([])
   const [nome, setNome] = useState<string>('')
+  const [openModal, setOpenModal] = useState<any>(null)
 
   const getPeople = useCallback(async (): Promise<void> => {
     try {
@@ -22,6 +25,10 @@ const People = () => {
     }
   },[nome])
 
+  const handleModal = (value:any):void => {
+    setOpenModal(value)
+  }
+
   useEffect(()=>{
     getPeople()
   },[getPeople])
@@ -30,12 +37,21 @@ const People = () => {
     <div className="container">
       <h1>Pessoas</h1>
 
-      <Search onSubmit={(e) => setNome(e)} />
+      <div className="header">
+        <Search onSubmit={(e) => setNome(e)} />
+      </div>
 
       <List
-        header={header}
+        header={header(handleModal)}
         content={people}
       />
+
+      {openModal !== null && 
+        <PeopleModal
+          data={openModal}
+          handleModal={handleModal}
+        />
+      }
     </div>
   )
 }

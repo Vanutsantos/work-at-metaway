@@ -42,13 +42,13 @@ const Sidebar = ():JSX.Element => {
       title: 'Contatos',
       Icon: RiContactsBook2Line
     },
-    // {
-    //   id: 6,
-    //   path: '/logout',
-    //   title: 'Sair',
-    //   Icon: RiLogoutBoxLine
-    // },
   ]
+
+  const logOut = ():void => {
+    if (window.confirm("Você realmente quer sair?")) {
+      window.location.href = '/logout'
+    }
+  }
 
   return(
     <div className={`sidebar ${close ? 'close':''}`}>
@@ -68,6 +68,12 @@ const Sidebar = ():JSX.Element => {
             </Link>
           </li>
         ))}
+        <li>
+          <a onClick={logOut}>
+            <RiLogoutBoxLine />
+            Sair
+          </a>
+        </li>
       </ul>
     </div>
   )

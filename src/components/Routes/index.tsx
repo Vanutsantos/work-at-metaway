@@ -3,7 +3,6 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import { getUser } from '../../helpers/storage'
 
 import { BaseLayout, EmptyLayout } from '../layouts'
-import Home from '../../pages/Home'
 import Profile from '../../pages/Profile'
 import Auth from '../../pages/Auth'
 import Users from '../../pages/Users'
@@ -11,6 +10,7 @@ import People from '../../pages/People'
 import NotFound from '../../pages/NotFound'
 import Contacts from '../../pages/Contacts'
 import Logout from '../../pages/Auth/logout'
+import Home from '../../pages/Home'
 
 const RouteFactory = ():JSX.Element => {
   // const isAuth = ():boolean => true

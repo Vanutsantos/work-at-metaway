@@ -1,13 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import List from '../../components/List';
 import Search from '../../components/Search';
-import { UserModel } from '../../models/user.model';
-import { loadUsers } from '../../services/Users';
+import UserModal from '../../components/UserModal';
+import { loadUsers, postUser } from '../../services/Users';
 import { header } from './fields';
+import './styles.scss'
 
 const Users = () => {
-  const [users, setUsers] = useState<UserModel[]>([])
+  const [users, setUsers] = useState<any>([])
   const [termo, setTermo] = useState<string>('')
+  const [openModal, setOpenModal] = useState<any>(null)
 
   const getUsers = useCallback(async (): Promise<void> => {
     try {
@@ -18,6 +20,26 @@ const Users = () => {
     }
   },[termo])
 
+  const createUser = async (body:any):Promise<void> => {
+    try {
+      const res = await postUser({
+        tipos: [ body.tipo || 'ROLE_ADMIN' ],
+        usuario: body
+      })
+      
+      alert(res.data.message)
+      setOpenModal(null)
+    } catch (error:any) {
+      alert(error.message)
+      setOpenModal(null)
+      console.error(error)
+    }
+  }
+
+  const handleModal = (value:any):void => {
+    setOpenModal(value)
+  }
+
   useEffect(()=>{
     getUsers()
   },[getUsers])
@@ -26,12 +48,28 @@ const Users = () => {
     <div className="container">
       <h1>Usuários</h1>
 
-      <Search onSubmit={(e) => setTermo(e)} />
+      <div className="header">
+        <Search onSubmit={(e) => setTermo(e)} />
+        <button 
+          className="add-item"
+          onClick={() => setOpenModal(false)}
+        >
+          Adicionar usuário
+        </button>
+      </div>
 
       <List
-        header={header}
+        header={header(handleModal)}
         content={users}
       />
+
+      {openModal !== null && 
+        <UserModal
+          data={openModal}
+          handleModal={handleModal}
+          onSubmit={createUser}
+        />
+      }
     </div>
   )
 }

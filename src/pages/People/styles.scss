@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .add-item {
+    background: $color-primary;
+    border: none;
+    color: $color-white;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
