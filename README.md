@@ -8,7 +8,7 @@ You can try out this application by cloning this repository and executing yarn i
 
 ```
 git clone https://github.com/Vanutsantos/work-at-metaway.git
-cd frontend-challenge
+cd work-at-metaway
 yarn install
 yarn 
 ```
