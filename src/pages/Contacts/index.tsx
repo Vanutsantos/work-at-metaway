@@ -1,36 +1,37 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import List from '../../components/List';
+import Search from '../../components/Search';
 import { loadContacts } from '../../services/Contacts';
+import { header } from './fields';
 
 const Contacts = () => {
   const [contacts, setContacts] = useState<any>([])
-  const [query, setQuery] = useState<string>('')
+  const [termo, setTermo] = useState<string>('')
 
   const getContacts = useCallback(async (): Promise<void> => {
     try {
-      const { data } = await loadContacts({
-        termo: query
-      })
+      const { data } = await loadContacts({ termo })
       setContacts(data)
     } catch (error) {
       console.error(error)
     }
-  },[query])
+  },[termo])
 
   useEffect(()=>{
     getContacts()
   },[getContacts])
 
   return(
-    <div>
+    <div className="container">
       <h1>Contatos</h1>
 
-      <ul>
-        {contacts.map((item:any) => (
-          <li key={item.id}>{item.pessoa.nome}</li>
-        ))}
-      </ul>
+      <Search onSubmit={(e) => setTermo(e)} />
 
-    </div>
+      <List
+        header={header}
+        content={contacts}
+      />
+  </div>
   )
 }
 

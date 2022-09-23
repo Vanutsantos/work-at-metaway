@@ -1,57 +1,26 @@
 import React from 'react'
 import './styles.scss'
 
-const List = ():JSX.Element => {
+interface ListProps  {
+  header: any
+  content: any
 
-  const header = [
-    {
-      title: 'Nome',
-      object: 'nome'
-    },
-    {
-      title: 'Data de nascimento',
-      object: 'dataNascimento'
-    },
-    {
-      title: 'CPF',
-      object: 'cpf'
-    },
-    {
-      title: 'Email',
-      object: 'email'
-    },
-    {
-      title: 'Telefone',
-      object: 'telefone'
-    },
-    {
-      title: 'Username',
-      object: 'username'
-    }
-  ]
+}
 
-  const content = [
-    {
-        "id": 1,
-        "nome": "Administrador",
-        "dataNascimento": "1986-12-03",
-        "cpf": "380.854.570-40",
-        "email": "suporte@metaway.com.br",
-        "telefone": "(54) 3055-2577",
-        "username": "admin",
-        "password": "$2a$10$nFezmH.OppxvpqlroxkP9uERtLWbNyJiRKO/ronjn0AnFEZhqoKLu"
-    },
-    {
-        "id": 2,
-        "nome": "Usuário",
-        "dataNascimento": "1982-04-18",
-        "cpf": "023.884.381-52",
-        "email": "usuario@metaway.com.br",
-        "telefone": "(54) 3055-2577",
-        "username": "user",
-        "password": "$2a$10$nFezmH.OppxvpqlroxkP9uERtLWbNyJiRKO/ronjn0AnFEZhqoKLu"
+const List = ({ header, content }:ListProps):JSX.Element => {
+
+  console.log(content)
+
+  const makeContent = (value:any):any => {
+    switch (value) {
+      case true:
+        return 'Verdadeiro'
+      case false:
+        return 'Falso'
+      default:
+        return value ? value : '-'
     }
-]
+  }
 
   return(
     <div className='list-component'>
@@ -61,7 +30,7 @@ const List = ():JSX.Element => {
             key={th.object}
             className='custom-th'
             style={{
-              width: `${100/8}%`
+              width: `${100/Number(header.length)}%`
             }}
           >
             <h4>{th.title}</h4>
@@ -76,10 +45,10 @@ const List = ():JSX.Element => {
                 key={td.object} 
                 className='custom-td'
                 style={{
-                  width: `${100/8}%`
+                  width: `${100/Number(header.length)}%`
                 }}
               >
-                <p key={td.object}>{th[td.object]}</p>
+                <p key={td.object}>{makeContent(th[td.object])}</p>
               </div>
             ))}
           </div>

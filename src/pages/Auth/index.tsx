@@ -44,11 +44,11 @@ const Auth = ():JSX.Element => {
               type="text"
               value={values.username}
               onChange={(e) => {
-              setValues((prev:any) => ({
-                ...prev,
-                username: e.target.value
-                }))
-              }}
+                setValues((prev:any) => ({
+                  ...prev,
+                  username: e.target.value
+                  }))
+                }}
             />
           </div>
             

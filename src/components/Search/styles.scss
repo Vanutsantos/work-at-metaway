@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.search-wrapper {
+  margin-bottom: 20px;
+
+  input {
+    outline: none;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid $color-black;
+    border-right: none;
+    padding: 0 10px;
+    width: 300px;
+    max-width: 80%;
+  }
+
+  button {
+    background: $color-primary;
+    height: 40px;
+    color: $color-white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 0 10px;
+  }
+}

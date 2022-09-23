@@ -42,12 +42,12 @@ const Sidebar = ():JSX.Element => {
       title: 'Contatos',
       Icon: RiContactsBook2Line
     },
-    {
-      id: 6,
-      path: '/logout',
-      title: 'Sair',
-      Icon: RiLogoutBoxLine
-    },
+    // {
+    //   id: 6,
+    //   path: '/logout',
+    //   title: 'Sair',
+    //   Icon: RiLogoutBoxLine
+    // },
   ]
 
   return(
