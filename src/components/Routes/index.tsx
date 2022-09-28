@@ -13,27 +13,6 @@ import Logout from '../../pages/Auth/logout'
 import Home from '../../pages/Home'
 
 const RouteFactory = ():JSX.Element => {
-  // const isAuth = ():boolean => true
-  // const routes = [
-  //   {
-  //     layout: BaseLayout,
-  //     pathBase: '/',
-  //     pages: [
-  //       { component: Home, index: true },
-  //       { path: '/meu-cadastro', component: Profile },
-  //       { path: '/usuarios', component: Users },
-  //       { path: '/pessoas', component: People },
-  //       { path: '/contatos', component: Contacts },
-  //     ],
-  //   },
-  //   {
-  //     layout: EmptyLayout,
-  //     pages: [
-  //       { path: '/login', component: Auth },
-  //     ],
-  //   },
-  // ]
-
   const navigate = useNavigate();
   const user = getUser()
 
